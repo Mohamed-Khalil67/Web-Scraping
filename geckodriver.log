@@ -1,0 +1,52 @@
+1639480854909	geckodriver	INFO	Listening on 127.0.0.1:39981
+1639480989458	geckodriver	INFO	Listening on 127.0.0.1:52787
+1639480989460	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "47965" "-no-remote" "-profile" "/tmp/rust_mozprofilet0bhXC"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1639480990168	Marionette	INFO	Marionette enabled
+ExceptionHandler::GenerateDump cloned child 9233
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+1639483948800	geckodriver	INFO	Listening on 127.0.0.1:45055
+1639483948802	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59197" "-no-remote" "-profile" "/tmp/rust_mozprofilebQzSyS"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1639483949455	Marionette	INFO	Marionette enabled
+ExceptionHandler::GenerateDump cloned child 10795
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+1639485821235	geckodriver	INFO	Listening on 127.0.0.1:43809
+1639485875260	geckodriver	INFO	Listening on 127.0.0.1:42279
+1639485875262	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "42927" "-no-remote" "-profile" "/tmp/rust_mozprofilemBqD3F"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1639485875977	Marionette	INFO	Marionette enabled
+ExceptionHandler::GenerateDump cloned child 13641
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+1639486230393	geckodriver	INFO	Listening on 127.0.0.1:56835
+1639486230396	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "41795" "-no-remote" "-profile" "/tmp/rust_mozprofilecpVN0T"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1639486231081	Marionette	INFO	Marionette enabled
+ExceptionHandler::GenerateDump cloned child 18963
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+1639486246442	geckodriver	INFO	Listening on 127.0.0.1:52605
+1639486246945	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "39767" "-no-remote" "-profile" "/tmp/rust_mozprofileLDPek2"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1639486247612	Marionette	INFO	Marionette enabled
+ExceptionHandler::GenerateDump cloned child 19074
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
