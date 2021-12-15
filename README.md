@@ -6,7 +6,7 @@
 
 #### Site Web :
 
-* RS components International : https://fr.rs-online.com/web/c/raspberry-pi-arduino-outils-de-developpement/boutique-raspberry-pi/raspberry-pi/
+* Amazon.fr : https://www.amazon.fr/
 
 Ce site est choisi pour chercher la mise à jour des prix du raspberry pi en scrapper les prix et mettre à jour un tableau.
 
