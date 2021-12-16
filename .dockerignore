@@ -1,6 +1,6 @@
-env
-soup
+soup/*
 .ipynb_checkpoints/*
 env.*
 README.md
 geckodriver.log
+webscrapper.ipynb

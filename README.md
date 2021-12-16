@@ -15,11 +15,31 @@ Ce site est choisi pour chercher la mise à jour des prix du raspberry pi en scr
 #### Tool choisi est " Selenium " :
 
 * Pour ses plusieurs utilisations et fonctions , comme click boutons , page scroll.
+* Possibilitées d'aller sur plusieurs pages et récupérer les données
 
-- Préciser (sous forme de commentaire) la methode de récupération des données 
-- Inclure des temps de pauses pour pouvoir suspendre votre code (pendant une seconde par exemple). Cela va vous aider à ne pas être signalé comme spam auprès du site.
-- Votre projet dispose d’une documentation claire et concise qui explique les différentes lignes de code ainsi que des commentaire. 
-- Présenter votre code sous forme de notebook jupyter en detaillant chaque étapes 
-- Dans la mesure du possible, faire une analyse de vos données récupérées
-- Paqueter votre script dans un container docker et expliciter les commandes afin de le lancer 
-- Refactorer votre code Jupyter en un script python orienté objet en utilisant le module argparse afin de permettre l’utilisation d’input utilisateur dans le lancement du script 
+#### La méthode selenium pour récupération des données
+
+* On va afficher tous les produits qui concerne le 'raspberry pi 4' sur amazon afin de visualiser les prix et leurs changements
+* il y a une manipulation et enregistrement des données à partir des class balises sur les pages amazon html qui concerne les prix , name , asin , rating ,rating_num et liens pour ces produits
+* Aprés , ils sont enregistrées dans des listes qui itérent dans la page html en utilisant les méthodes find.element ou elements 
+* Energistrement des données dans un fichier amazon_search.db afin de le récupérer aprés et le présenter en format tableau en utilisant script python flask.
+
+#### Temps de suspensation:
+
+* les temps des suspensions est ajoutée aprés chaque ouverture d'une page aprés et avant clickant au dessus en utilisant : driver.implicitly_wait(5)
+
+#### Clean code :
+
+* clean code est fait en commencant avec les essais de jupyter notebook , ( ipynb ) , pour essayer chaque partie du code et scrapping en générale
+
+* Mes données comme expliquées sont les infos prix et compositions et liens du produit : rapsberry pi 4 , le produit m'a interessé puisque les prix sont trop augmenté pour les circuits embarquées
+
+#### Container creation :
+
+* Deux containeur sont censées d'être crées et avoir une connection network entre eux mais par rapport au recherche j'ai réalisé que c'est pas implémenté jusqu'à maintenant.
+* J'ai réussie à lancer selenium standalone chrome et lancer mon script python dépendant du ce container.
+
+
+#### Refactoration du code en jupyter :
+
+* The app.py script est codé sous forme des fonctions qui se lance l'un aprés l'autre , scrape_amazon(). en choissisant les nombres de pages à scrapper et le keyword du produit.

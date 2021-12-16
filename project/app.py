@@ -5,6 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.support import expected_conditions as EC
 from flask import Flask,request,render_template,redirect
 
@@ -42,18 +43,18 @@ def store_db(product_asin, product_name, product_price, product_ratings, product
     conn.commit()
     conn.close()
 
-
-options = webdriver.ChromeOptions()
-options.add_argument('--headless')
+#driver = webdriver.Remote("http://127.0.0.1:4444/wd/hub", DesiredCapabilities.CHROME)
 
 keyword = 'raspberry pi 4'
 next_page = ''
+web = 'https://www.amazon.fr/'
+
 
 def scrape_amazon(keyword, max_pages):
 
     page_number = 1
-    driver = webdriver.Chrome()
-    web = 'https://www.amazon.fr/'
+    #driver = webdriver.Chrome()
+    driver= webdriver.Remote(desired_capabilities=DesiredCapabilities().CHROME,command_executor='http://127.0.0.1:4444/wd/hub')
 
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
