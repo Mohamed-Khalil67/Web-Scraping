@@ -1,11 +1,32 @@
 import time
+import sqlite3
+import os
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from flask import Flask,request,render_template,redirect
 
-import sqlite3
+
+class Product(object):
+    def __init__(self,product_asin, product_name, product_price, product_ratings, product_ratings_num, product_link):
+        self.product_asin = product_asin
+        self.product_name = product_name
+        self.product_price = product_price
+        self.product_ratings = product_ratings
+        self.product_ratings_num = product_ratings_num
+        self.product_link = product_link
+
+# DATA_PATH = "/database"
+# access = 0o777
+
+# if os.path.exists(DATA_PATH) == False:
+#     os.mkdir(DATA_PATH)
+#     os.chmod(DATA_PATH,access)
+
+
+app = Flask(__name__)
 
 def store_db(product_asin, product_name, product_price, product_ratings, product_ratings_num, product_link):
     conn = sqlite3.connect('amazon_search.db')
@@ -102,3 +123,35 @@ def scrape_page(driver):
     store_db(product_asin, product_name, product_price, product_ratings, product_ratings_num, product_link)
 
 scrape_amazon(keyword,2)
+
+
+def load_products():
+
+    products = []
+
+    LOAD_PRODUCTS = "SELECT * from search_result"
+    conn = sqlite3.connect('amazon_search.db')
+    cursor = conn.cursor()
+    results = conn.execute(LOAD_PRODUCTS)
+
+    for row in results:
+        products.append(Product(row[0],row[1],row[2],row[3],row[4],row[5]))
+    return products
+
+# @app.route("/",methods=["POST","GET"])
+# def index():
+#      
+#        add_product_name()
+
+#         return redirect("/product_detail")
+
+#     return render_template("index.html")
+
+@app.route("/",methods=["GET"])
+def products():
+
+    products = load_products()
+
+    return render_template("products.html",products=products)
+
+app.run(host="0.0.0.0",port=5000)

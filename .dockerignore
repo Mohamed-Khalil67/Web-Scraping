@@ -1,0 +1,6 @@
+env
+soup
+.ipynb_checkpoints/*
+env.*
+README.md
+geckodriver.log

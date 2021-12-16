@@ -1,0 +1,36 @@
+<html>
+<head>
+</head>
+<body>
+    <div class="main-container">
+    <div class="products-container">
+       
+        {% for product_detail in products %}
+            <div class="product">
+            <p class="product-asin"> {{ product_detail.product_asin }} </p>
+            <p class="product-name">{{ product_detail.product_name }} </p>
+            <p class="product-price"> {{ product_detail.product_price }} </p>
+            <p class="product-ratings">{{ product_detail.product_ratings }} </p>
+            <p class="product-ratings-num"> {{ product_detail.product_ratings_num }} </p>
+            <p class="product-link">{{ product_detail.product_link }} </p>
+
+        </div>
+        <br><br>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+    <div class="main-container">
+
+    <br>
+    <i><h1> Raspberry pi 4 </h1></i>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>
