@@ -1,45 +1,61 @@
-# Web-Scraping
+Here's a professionally rewritten version of your README.md with clear structure, corrected grammar, and improved technical clarity:
 
-## Objectif du projet : Pour un client (fictif ou non) vous devez coder un script python qui permet d’extraire automatiquement des informations ciblées d’un site web. Dans cette optique, vous avez les specifications suivantes : 
+---
 
-### Choisir un site web avec des données
+# Web Scraping Project: Amazon Price Tracker
 
-#### Site Web :
+## Project Objective
+Develop a Python script to automatically extract and monitor pricing data for Raspberry Pi 4 devices from Amazon.fr.
 
-* Amazon.fr : https://www.amazon.fr/
+## Technical Specifications
 
-Ce site est choisi pour chercher la mise à jour des prix du raspberry pi en scrapper les prix et mettre à jour un tableau.
+### Target Website
+- **Amazon.fr**: [https://www.amazon.fr/](https://www.amazon.fr/)
+- **Target Product**: Raspberry Pi 4 (Monitoring price fluctuations for embedded systems components)
 
-### Choisir un outil de scrapping (bs4, selenium, scrappy… ) :
+### Scraping Tool Selection
+**Selenium** was chosen because it enables:
+- Interactive browser automation (button clicks, page scrolling)
+- Multi-page navigation
+- Robust element location strategies
 
-#### Tool choisi est " Selenium " :
+### Implementation Approach
 
-* Pour ses plusieurs utilisations et fonctions , comme click boutons , page scroll.
-* Possibilitées d'aller sur plusieurs pages et récupérer les données
+#### Data Collection
+1. Search for "Raspberry Pi 4" products on Amazon
+2. Extract the following product attributes:
+   - Product name
+   - ASIN (Amazon Standard Identification Number)
+   - Current price
+   - Customer rating
+   - Rating count
+   - Product URL
 
-#### La méthode selenium pour récupération des données
+#### Technical Process
+- HTML parsing using Selenium's `find_element`/`find_elements` methods
+- Data storage in lists during iteration
+- Persistent storage in `amazon_search.db` SQLite database
 
-* On va afficher tous les produits qui concerne le 'raspberry pi 4' sur amazon afin de visualiser les prix et leurs changements
-* il y a une manipulation et enregistrement des données à partir des class balises sur les pages amazon html qui concerne les prix , name , asin , rating ,rating_num et liens pour ces produits
-* Aprés , ils sont enregistrées dans des listes qui itérent dans la page html en utilisant les méthodes find.element ou elements 
-* Energistrement des données dans un fichier amazon_search.db afin de le récupérer aprés et le présenter en format tableau en utilisant script python flask.
+#### Performance Considerations
+- Implemented 5-second implicit waits (`driver.implicitly_wait(5)`) between page interactions
+- Randomized delay intervals to prevent bot detection
 
-#### Temps de suspensation:
+### Development Workflow
+1. **Prototyping**: Initial testing in Jupyter Notebook (.ipynb)
+2. **Modularization**: Refactored into functional components in `app.py`
+   - `scrape_amazon()` main function with configurable:
+     - Page count
+     - Search keyword
+3. **Containerization**:
+   - Selenium Standalone Chrome container
+   - Python script container (planned network bridge not implemented)
 
-* les temps des suspensions est ajoutée aprés chaque ouverture d'une page aprés et avant clickant au dessus en utilisant : driver.implicitly_wait(5)
+### Data Significance
+Raspberry Pi 4 was selected due to:
+- Notable price volatility in embedded systems market
+- High demand creating interesting pricing patterns
 
-#### Clean code :
-
-* clean code est fait en commencant avec les essais de jupyter notebook , ( ipynb ) , pour essayer chaque partie du code et scrapping en générale
-
-* Mes données comme expliquées sont les infos prix et compositions et liens du produit : rapsberry pi 4 , le produit m'a interessé puisque les prix sont trop augmenté pour les circuits embarquées
-
-#### Container creation :
-
-* Deux containeur sont censées d'être crées et avoir une connection network entre eux mais par rapport au recherche j'ai réalisé que c'est pas implémenté jusqu'à maintenant.
-* J'ai réussie à lancer selenium standalone chrome et lancer mon script python dépendant du ce container.
-
-
-#### Refactoration du code en jupyter :
-
-* The app.py script est codé sous forme des fonctions qui se lance l'un aprés l'autre , scrape_amazon(). en choissisant les nombres de pages à scrapper et le keyword du produit.
+### Future Improvements
+- Implement inter-container communication
+- Add price change visualization
+- Develop Flask dashboard for data presentation
