@@ -1,7 +1,3 @@
-Here's a professionally rewritten version of your README.md with clear structure, corrected grammar, and improved technical clarity:
-
----
-
 # Web Scraping Project: Amazon Price Tracker
 
 ## Project Objective
